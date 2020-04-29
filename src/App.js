@@ -23,8 +23,10 @@ class App extends React.Component {
     // this.setState({ currentUser: user }); //This connection is always open as long as the application in mounted
     // console.log(user); // whenver some changes happen, firebase will immediately send a different user object and we will be able to get it immediately as well
     this.unSubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
+
         userRef.onSnapshot((snapShot) => {
           this.setState({
             currentUser: {
@@ -32,9 +34,7 @@ class App extends React.Component {
               ...snapShot.data(),
             },
           });
-          console.log(this.state);
         });
-        // console.log(this.state.currentUser)
       } else {
         this.setState({ currentUser: userAuth }); // like currentUser : null, since now the userObject will be giving a null value only
       }
