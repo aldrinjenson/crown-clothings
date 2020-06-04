@@ -7,7 +7,7 @@ import { selectCartItemsCount } from '../../redux/cart/cart.selectors'
 import { createStructuredSelector } from 'reselect'
 
 const CartIcon = ({ toggleCartHidden, itemCount }) => {
-   console.log('being called') // this will now be called only when the component rerenders
+   // console.log('being called') // this will now be called only when the component rerenders
    return (
       <div className="cart-icon" onClick={toggleCartHidden} >
          <ShoppingIcon className='shopping-icon' />
