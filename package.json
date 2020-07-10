@@ -19,7 +19,7 @@
     "redux-persist": "^6.0.0",
     "reselect": "^4.0.0"
   },
-  "scripts": {
+    "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
